@@ -1,0 +1,17 @@
+Operation mod
+In the C++ its denotes as operation "%".
+So this operation take remain part of division.
+For example 10 % 3 == 1, since 9 is the bigger num near (less or equal) to 10, hence 1 == 10 - 9
+
+Main proporties of mod (%):
+
+1. (a * b) % m == (a % m * b % m) % m
+
+2. (a + b) % m == (a % m + a % m) % m
+
+3. (a ^ b) % m == (a % m ^ b % (m - 1)) % m if m is a prime number. Problem for that with tutorial:https://www.hackerrank.com/blog/nov-2020-editorial-power-of-numbers
+
+4. (a / b ) %m == (a * (b^-1)) % m where b^-1 can be find by solving this one (b^-1) === 1 (% m). Pay attention b^-1 is not 1/b!!!
+Also (b^-1) is called as invertible elemnt or a unit in a ring for b (http://en.wikipedia.org/wiki/Unit_(ring_theory))
+It can be solved by GCDE (http://en.wikipedia.org/wiki/Extended_Euclidean_algorithm)
+(http://e-maxx.ru/algo/reverse_element)
