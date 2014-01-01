@@ -11,6 +11,7 @@ Main proporties of mod (%):
 2. (a + b) % m == (a % m + a % m) % m
 
 3. (a ^ b) % m == (a % m ^ b % (m - 1)) % m if m is a prime number. Problem for that with tutorial:https://www.hackerrank.com/blog/nov-2020-editorial-power-of-numbers
+Its follows from Fermat's little theorem, see Generalizations (http://en.wikipedia.org/wiki/Fermat%27s_little_theorem)
 else you can use this fact
 (a ^ b) % m = F(a,b) = if (b % 2 == 0) (F(a,b/2) * a % m * a % m) else (F(a,b - 1) * a) % m that work for O(log b).
 (http://en.wikipedia.org/wiki/Exponentiation_by_squaring)
