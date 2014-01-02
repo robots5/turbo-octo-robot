@@ -49,7 +49,8 @@ and problem for training: https://www.hackerrank.com/blog/nov-2020-editorial-fin
 
 Some applications of Gaussian elimination will be added below:
 
-...
+In the game "Old Park Ghost" there is puzzle with key that can be solved by Gaussian elimination.
+And all type of this puzzle can be reduced to the solution of the matrix.
 
 Simple implementation that cant be used in ptractic at all just for learn:
 #include <iostream>
