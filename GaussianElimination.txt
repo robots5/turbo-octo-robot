@@ -48,3 +48,79 @@ Good explanation/implementation can be found here http://e-maxx.ru/algo/linear_s
 and problem for training: https://www.hackerrank.com/blog/nov-2020-editorial-find-the-operations
 
 Some applications of Gaussian elimination will be added below:
+
+...
+
+Simple implementation that cant be used in ptractic at all just for learn:
+#include <iostream>
+#include <vector>
+#include <assert.h>
+using namespace std;
+typedef vector<double> vec;
+typedef vector<vec > matrix;
+const double EPS = 1e9;
+vec simpleGaussSolver(matrix &a,vec &b)
+{ // with not pivoting and detection of unsolveable
+	int n = a.size(); // row size
+	// add vector b to matrix a
+	for (int i = 0; i < b.size(); i++)	a[i].push_back (b[i]);
+	int m = a[0].size(); // columt size
+	//Gauss begin
+	int curCol = 0;
+	assert (n == m - 1);
+	for (int curRow = 0; curRow < n; curRow++,curCol++)
+	{
+		assert (a[curRow][curCol] < EPS); //pivoting is needed
+		double divel = a[curRow][curCol];
+		for (int j = curCol; j < m; j++)
+			a[curRow][j] /= divel; // to 1 a(i,i) cell
+
+		for (int i = 0; i < n; i++)
+		{
+			if (i != curRow)
+			{
+				double c = a[i][curCol]; // for tranform elemnts in the column to zero 
+				for (int j = curCol; j < m; j++)
+				{
+					a[i][j] -= a[curRow][j] * c;
+				}
+			}
+		}
+	}
+	vec x;
+	for (int i = 0; i < b.size(); i++)
+		x.push_back (a[i][b.size()]);
+	return x;
+}
+int main()
+{
+	//vec B;
+	//matrix A;
+	////fill A B
+	//vec x = simpleGaussSolver (A,B);
+	//solving of wikipedia exmpale
+	int n = 3;
+	int a[3][3] = {
+			{2,1,-1},
+			{-3,-1,2},
+			{-2,1,2}	
+	};
+	int b[3] = {8,-11,-3};
+	//copy to typedef structure
+	matrix A1(3,vec(3));
+	vec B1(3);
+
+	for (int i = 0; i < n; i++){
+		for (int j = 0; j < n; j++)
+			A1[i][j] = a[i][j];
+		B1[i] = b[i];
+	}
+	//solving
+	vec x = simpleGaussSolver (A1,B1);
+	//printf ans
+	for (int i = 0; i < x.size(); i++)
+		cout << x[i] << " ";
+	//wiki ans: x1 = 2  x2 = 3  x3 = -1
+
+	return 0;
+}
