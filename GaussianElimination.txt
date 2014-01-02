@@ -41,7 +41,9 @@ and
 x2 = (b2-a21(b1 / a11))/(a22-a21 *(a12 / a11))
 
 Probably I made a mistake somewhere, but main idea is true.
-And its not all, also there is some problem with pivoting.
+And its not all, also there is some problem with pivoting, when a(i,i) elements is zero then we can't get zero in the other of current column.
+So for solve this problem pivoting is used.
+
 Good explanation/implementation can be found here http://e-maxx.ru/algo/linear_systems_gauss.
 and problem for training: https://www.hackerrank.com/blog/nov-2020-editorial-find-the-operations
 
