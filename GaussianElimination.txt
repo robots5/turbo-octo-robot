@@ -1,0 +1,48 @@
+Gaussian elimination or how to aplly matrix method in some problems
+
+Gaussian elimination is used  for finding x in expression Ax = B  where A,B - is matrixes (http://en.wikipedia.org/wiki/Gaussian_elimination)
+
+Lets n be the count of row, and m column.
+
+All shceme of algorithm based on next transform operation:
+- division on coeff for all row in order to get 1 on the current cell in the matrix
+- summa of two row in order to get zero in in the cell a(i,j) where i != j
+Hence we get e matrix with which can be found x.
+
+For example:
+|a11 a12|*|x1|= |b1|
+|a21 a22| |x2|= |b2|
+1 form matrix for Gaussian elimination
+|a11 a12 b1|
+|a21 a22 b2|
+div a11
+|1 (a12 / a11) (b1 / a11)|
+|a21      a22      b2    |
+
+change second row: summ row 1 and 2 for transorm a21 to 0. Before that row 1 must be mul by -a21, and we get -a21 -a21 *(a12 / a11)  -a21(b1 / a11)
+|1  (a12 / a11)               (b1 / a11)        |
+|0  (a22-a21 *(a12 / a11))    (b2-a21(b1 / a11))|
+
+2 same operation we doing with row 2, i.e:
+
+|1  (a12 / a11)               (b1 / a11)             |
+|0     1    (b2-a21(b1 / a11))/(a22-a21 *(a12 / a11))|
+change first row
+|1   0    (b1 / a11) - (a12 / a11) *  (b2-a21(b1 / a11))/(a22-a21 *(a12 / a11))|
+|0   1    (b2-a21(b1 / a11))/(a22-a21 *(a12 / a11))|
+
+and this is end.
+We get result e matrix
+|1 0|*|x1|= |(b1 / a11) - (a12 / a11) *  (b2-a21(b1 / a11))/(a22-a21 *(a12 / a11))|
+|0 1| |x2|= |(b2-a21(b1 / a11))/(a22-a21 *(a12 / a11))|
+after that its clear that 
+x1 = (b1 / a11) - (a12 / a11) *  (b2-a21(b1 / a11))/(a22-a21 *(a12 / a11))
+and 
+x2 = (b2-a21(b1 / a11))/(a22-a21 *(a12 / a11))
+
+Probably I made a mistake somewhere, but main idea is true.
+And its not all, also there is some problem with pivoting.
+Good explanation/implementation can be found here http://e-maxx.ru/algo/linear_systems_gauss.
+and problem for training: https://www.hackerrank.com/blog/nov-2020-editorial-find-the-operations
+
+Some applications of Gaussian elimination will be added below:
