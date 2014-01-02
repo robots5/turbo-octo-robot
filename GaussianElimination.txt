@@ -1,4 +1,4 @@
-Gaussian elimination or how to aplly matrix method in some problems
+Gaussian elimination and how to aplly matrix method in some problems
 
 Gaussian elimination is used  for finding x in expression Ax = B  where A,B - is matrixes (http://en.wikipedia.org/wiki/Gaussian_elimination)
 
