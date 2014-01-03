@@ -34,17 +34,12 @@ int gauss (vector < bitset<N> > a, int n, int m, bitset<N> & ans) {
 	{
        if (a[i][i] == 0 && a[i][n] == 1) 
 		   return 0;
-        
-	   if (a[i][i] == 0) 
-			ans[i] = 0;
-        else 
-			ans[i] = a[i][n];
+	ans[i] = a[i][n];
 
-		if (ans[i]){
-			for (int j = i - 1; j >= 0; j--)
-				if (a[j][i] == 1) 
-					a[j][n] = a[j][n] ^ 1;
-		}
+	if (ans[i]){
+		for (int j = i - 1; j >= 0; j--)
+				a[j][n] = a[j][n] ^ a[j][i];
+	}
     }
 
     return 1;
