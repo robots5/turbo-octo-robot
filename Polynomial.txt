@@ -1,0 +1,100 @@
+Definition can be found here http://en.wikipedia.org/wiki/Polynomial
+
+consider the example of that http://acm.timus.ru/problem.aspx?space=1&num=1467
+We have unknown N, and given k
+We have to find all coefficients of polynomial for sum: 1^k + 2^k + 3^k +...+ N^k
+
+for k == 1 its simple case sum = 1 + … + N = N(N+1)/2 = 0.5 * N^2 + 0.5 * N^1 + 0
+
+for more general case we have P(N) = A(k+1)N^(k+1) + A(k)N^k + … +A(1)N + A(0)
+where A(i) is array of coefficients that we need find.
+
+How to find array A(i) for given k?
+There are different ways to find it, look at some of them:
+
+1. http://en.wikipedia.org/wiki/Lagrange_polynomial O(k^2)
+
+2. http://en.wikipedia.org/wiki/Newton_polynomial O(k^2)
+
+3. Gaussian elimintion O(k^3)
+
+k = 0  A(0) +A(1)N 
+k = 1  A(0) +A(1)N  + A(2)N^2
+               ...
+k = k  A(0) +A(1)N  + A(2)N^2 + ... +A(k+1)N^(k+1)
+
+So we have matrix
+|1 0 0   ... 0      |*|A(0)|   |P(0)|
+|1 1 1^2 ... 1^(k+1)| |A(1)|   |P(1)|
+|...                | |... | = |....|
+|1 k k^2 ... k^(k+1)| |A(k)|   |P(K)|
+that can be solved by Gaussian elimintion
+
+4. http://codeforces.com/blog/entry/1390?locale=ru#comment-25332 Newton polynomial
+
+P(n) = c0 + c1 * n + c2 n *(n - 1) / 2 + ... + ck n * (n - 1) (n - 2) ... (n - k + 1) / k!
+
+where ci we find as a(i,0)
+where a(i,j) = a(i - 1,j + 1) - a(i - 1,j)
+and a(0,j) = P(j)
+
+First of all i get ci
+#include <iostream>
+#include <cmath>
+#include <vector>
+using namespace std;
+double P(int k,int n)
+{
+	double sum = 0;
+	for (int i = 1; i <= n; i++)
+		sum += pow(double(i),k);
+	return sum;
+}
+double binml(int k,int n)
+{
+	double res = 1,f = 1;
+	for (int i = 0; i < k; i++)
+	{
+		res *= (n - i);
+		f *= (i + 1);
+	}
+	return res / f;
+}
+double a[31][31];
+double calcP(vector<double> &c,int n)
+{
+	double sum = 0;
+	for (int i = 0; i < c.size(); i++)
+	{
+		sum += c[i] * binml(i,n);
+	}
+	return sum;
+}
+int main()
+{
+	int k;
+	cin >> k;
+
+	int m = k + 1;
+	for (int i = 0; i <= m; i++)
+		a[0][i] = P(k,i);
+
+	for (int i = 1; i <= m; i++)
+		for (int j = 0; j <= m - i; j++)
+			a[i][j] = a[i - 1][j + 1] - a[i - 1][j];
+
+	//find c
+	vector<double> c;
+	for (int i = 0; i <= m; i++){
+		cout << "c" << i << ": " << a[i][0] << endl;
+		c.push_back (a[i][0]);
+	}
+	//compare with original
+	cout << calcP (c,10) << " cmp with " << P(k,10);
+	return 0;
+}
+So for finding coefficients that is needed, we need just disclose the formula
+P(n) = c0 + c1 * n + c2 n *(n - 1) / 2 + ... + ck n * (n - 1) (n - 2) ... (n - k + 1) / k!
+and find A(i)
+P(n) = A(k+1)n^(k+1) + A(k)n^k + … +A(1)n + A(0)
+this is O(n^2) solution, its nice!!!
