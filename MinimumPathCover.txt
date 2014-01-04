@@ -1,0 +1,16 @@
+Dilworth's theorem or Minimum path cover
+Let us have a directed graph and we need to find minimal count of path, that cover all graph i.e. each vertex belong to some path only one item.
+This problem can be solved by MaxFlow's algorithms.
+But if we have n vertex and each other vertex is connected then we need O(n^2) memory, and worst time for any algorithm take place >= n^2.
+https://en.wikipedia.org/wiki/Minimum_path_cover
+
+
+Dilworth's theorem privide us (https://en.wikipedia.org/wiki/Dilworth%27s_theorem) the great sultion of this problem!
+
+First of all we have to find maximum vertexes subset, where any of two vertex dont't have the edge between them.
+Answer is a count of the number vertex in subset.
+That's all.
+
+
+Problem: https://www.hackerrank.com/contests/oct13/challenges/missile-defend
+Tutorial: https://www.hackerrank.com/blog/oct-2020-editorial-hackerx
