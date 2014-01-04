@@ -26,21 +26,18 @@ int main()
 	vector<pair<int,int> > v(n);
 	int a,b;
 	for (int i = 0; i < n; i++)
-	{
-		scanf ("%d%d",&a,&b);
+		scanf ("%d%d",&a,&b),
 		v[i] = make_pair(a - b,a + b);
-	}
 	sort (v.begin(),v.end());
-	vector<int> vb(n),d(n,1000000);
-	d[0] = -10000000;
-	for (int i = 0; i < n; i++)
-		vb[i] = v[n - i - 1].second;
+	for(int i = 0; i < n; i++)	v[i].second *= -1;
+	vector<int> d(n,1000000);
+	d[0] *= -1;
 	int ans = 0;
-	//find longest increasing subseq log by e-maxx.ru/algo
+	//find longest increasing subseq log e-maxx.ru/algo
 	for (int i=0; i<n; i++) {
-		int j = int (upper_bound (d.begin(), d.end(), vb[i]) - d.begin());
-		if (d[j-1] < vb[i] && vb[i] < d[j])
-			d[j] = vb[i],ans = max (ans,j);
+		int j = int (upper_bound (d.begin(), d.end(), v[i].second) - d.begin());
+		if (d[j-1] < v[i].second && v[i].second < d[j])
+			d[j] = v[i].second,ans = max (ans,j);
 	}
-	cout<< ans;
+	cout << ans;
 }
