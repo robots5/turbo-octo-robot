@@ -1,0 +1,14 @@
+Frobenius Numbers
+Its the LARGEST value that can't be obtain by given set of interger number.
+For example set is {5,4} and largest num is 7 since (8 can be obtain by 4 + 4, 9 = 4 + 5)
+For solving this problem need to transform into shortest path problem (http://www.combinatorics.org/ojs/index.php/eljc/article/view/v12i1r27/pdf)
+
+
+http://en.wikipedia.org/wiki/Coin_problem
+http://mathworld.wolfram.com/FrobeniusNumber.html
+
+Faster Algorithms for Frobenius Numbers http://www.combinatorics.org/ojs/index.php/eljc/article/view/v12i1r27/pdf
+
+Problem:
+https://www.hackerrank.com/contests/101sep13/challenges/powercode
+https://www.hackerrank.com/blog/sep-101-powercode
