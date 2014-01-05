@@ -1,0 +1,22 @@
+Number theory Suff(very briefly,only main)
+
+First of all we have a good imgination of the mod operation (see modOperation.txt), frequently denoted as - %.
+Some notions:
+1) % mod operatoin
+2) a % b = a - floor(a / b) = r, where r is the remainder of the division.
+3) -a % b = (a + b * k) - floor ((a + b * k) / b) any nums that a + b * k >= 0
+4) Z = {...,-1,0,1,..} integer set
+5) N = {0,1,...} natural number set
+6) d | a means that a = k * d and a % d == 0 (d divides a)
+7) Prime number have a denotation 'p' (usually), so if num 'a' only divisors are the 1 and 'a' then 'a' is a prime.
+First primes 2, 3, 5, 7, 11, 13 ...
+So if num have more than two trivial divisors then nums as composite numbers is called.
+8) The equivalence class modulo n, is set of numbers a + kn where k belongs to Z. For example a = 2, n = 3 set is {...-4,-1,2,5,8,...}
+9) So followed by 8-item we can say that if 'b' belong to set a + kn then b ? a (% n) or b % n = a % n 
+
+...
+
+http://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)
+https://en.wikipedia.org/wiki/Euler%27s_criterion
+https://en.wikipedia.org/wiki/Quadratic_residue
+Cormen's book.
