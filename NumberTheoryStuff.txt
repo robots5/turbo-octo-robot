@@ -51,3 +51,5 @@ http://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)
 https://en.wikipedia.org/wiki/Euler%27s_criterion
 https://en.wikipedia.org/wiki/Quadratic_residue
 Cormen's book.
+
+Problems: https://www.hackerrank.com/contests/oct13/challenges/period https://www.hackerrank.com/blog/oct-2020-editorial-period
