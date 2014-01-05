@@ -12,7 +12,38 @@ Some notions:
 First primes 2, 3, 5, 7, 11, 13 ...
 So if num have more than two trivial divisors then nums as composite numbers is called.
 8) The equivalence class modulo n, is set of numbers a + kn where k belongs to Z. For example a = 2, n = 3 set is {...-4,-1,2,5,8,...}
-9) So followed by 8-item we can say that if 'b' belong to set a + kn then b ? a (% n) or b % n = a % n 
+9) So followed by 8-item we can say that if 'b' belong to set a + kn then b = a (% n) or b % n = a % n 
+10) gcd (a,b) = m is the largest of the common divisors of a and b i.e. m = max m : m | a and m | b, for finding m Euclid's algorithm is used.
+11) also Euclid's algorithm allow to find x,y such as a * x + b * y = 1 (i.e gcd(a,b) = 1), hence we able to solve this one a * x = 1 (% b)
+(a * x + b * y) % b = 1 % b
+((a * x) % b + (b * y) % b) % b = 1 % b As far as (b * y) % b == 0 we have
+(a * x) % b = 1 % b
+a * x = 1 (% b)
+Where x inverse element (invertible element) for 'a' is called.
+http://en.wikipedia.org/wiki/Unit_(ring_theory)
+http://e-maxx.ru/algo/reverse_element
+Also:
+gcd(a,b) = gcd(b,a)
+gcd(a,b) = gcd(-a,b)
+gcd(a,b) = gcd(|a|,|b|)
+gcd(a,0) = |a|
+gcd(a,k * a) = |a|
+gcd(a * n,b * n) = n * gcd(a,b)
+
+gcd(a,b) = p1 ^ min(e1,f1) * p2 ^ min(e2,f2) * ... * pk ^ min (ek,fk)
+lcm(a,b) = p1 ^ max(e1,f1) * p2 ^ max(e2,f2) * ... * pk ^ max (ek,fk)
+where
+a = p1 ^ e1 * p2 ^ e2 ... pk^ek
+b = p1 ^ f1 * p2 ^ f2 ... pk^fk
+
+Next time:
+12) Mudular arithmetic. groups. closure. indentity.associativity
+13) Modular linear equations
+14) Chinese reainder theorem
+15) Primitive root. Discrete logarithm
+16) Square root
+17) Miller-Rabin primality test
+18) Pollard's rho heuristic
 
 ...
 
