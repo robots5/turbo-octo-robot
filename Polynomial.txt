@@ -29,6 +29,7 @@ So we have matrix
 |...                | |... | = |....|
 |1 k k^2 ... k^(k+1)| |A(k)|   |P(K)|
 that can be solved by Gaussian elimintion
+see timus1467notsolution.cpp
 
 4. http://codeforces.com/blog/entry/1390?locale=ru#comment-25332 Newton polynomial
 
