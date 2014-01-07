@@ -1,0 +1,10 @@
+http://en.wikipedia.org/wiki/Chebyshev_distance
+
+http://en.wikipedia.org/wiki/Manhattan_distance
+
+There is a connection between it:
+https://www.hackerrank.com/blog/aug-2020-editorial-signal-tower
+
+Problem:
+https://www.hackerrank.com/contests/aug13/challenges/signal-tower
+https://www.hackerrank.com/blog/start-at-startup-editorial-mr-bean-house
