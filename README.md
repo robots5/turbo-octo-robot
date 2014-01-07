@@ -1,12 +1,13 @@
 turbo-octo-robot
 ================
 
-Different things around a pure programming
+Different things around a pure programming.
 
-If you read this, sorry for my poor English, Im study its, and my project created just for fun:) 
+Hello, if you read this, then sorry for my poor English, Im study its, and my project created just for fun:) 
 
 Unlikely that you want, but it would be nice if you edit my notes in order to get rid of mistake in grammar or smth. other:))...Or leave you comment. Anyway thx. in advance.
 
+Cool citation:
 
 The thing about understanding Compiler Design; or by writing at least a small interpreter or a compiler is, that you gain a broad and reusable set of knowledge and skills across various areas of Computer Science and programming, which can be extended to many different areas. In some ways, writing a programming language is a quick and efficient top-down introduction to Computer Science.
 
